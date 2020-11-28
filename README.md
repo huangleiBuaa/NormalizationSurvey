@@ -22,8 +22,8 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 
 [TOC]
 
-* [1. Methodology](#1.-Methodology)
-  * [1.1 Normalizing Activations by Population Statistics](#1.1-Normalizing-Activations-by-Population-Statistics)
+* [1. Methodology](#Methodology)
+  * [1.1 Normalizing Activations by Population Statistics](#Normalizing-Activations-by-Population-Statistics)
   * [1.2 Normalizing Activations as Functions](#1.2 Normalizing Activations as Functions)
     * [1.2.1 Normalization Area Partitioning](#1.2.1 Normalization Area Partitioning)
     * [1.2.2 Normalization Operation](#1.2.2 Normalization Operation)
@@ -35,9 +35,9 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 
 -----
 
-## 1. Methodology
+## Methodology
 
-### 1.1 Normalizing Activations by Population Statistics
+### Normalizing Activations by Population Statistics
 
 - Efficient BackProp. Neural Networks: Tricks of the Trade, 1998.  [paper](http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf).
 
