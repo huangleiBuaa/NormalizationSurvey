@@ -18,20 +18,37 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 
 # Table of content
 
------
 
-[TOC]
+
+
 
 * [1. Methodology](#Methodology)
   * [1.1 Normalizing Activations by Population Statistics](#Normalizing-Activations-by-Population-Statistics)
-  * [1.2 Normalizing Activations as Functions](#1.2 Normalizing Activations as Functions)
-    * [1.2.1 Normalization Area Partitioning](#1.2.1 Normalization Area Partitioning)
-    * [1.2.2 Normalization Operation](#1.2.2 Normalization Operation)
-  * [Computer vision venues](#Computer-vision-venues)
-  * [Machine learning venues](#Machine-learning-venues)
-* [DG variants](#DG-variants)
+  * [1.2 Normalizing Activations as Functions](#Normalizing-Activations-as-Functions)
+    * [1.2.1 Normalization Area Partitioning](#Normalization-Area-Partitioning)
+    * [1.2.2 Normalization Operation](#Normalization-Operation)
+    * [1.2.3 Normalization Representation Recovery](#Normalization-Representation-Recovery)
+    * [1.2.4 Multi-Mode](#Multi-Mode)
+    * [1.2.5 Combinational Normalization](#Combinational-Normalization)
+    * [1.2.6 BN for More Robust Estimation](#BN-for-More-Robust-Estimation)
+  * [1.3 Normalizing Weights](#Normalizing Weights)
+  * [1.4 Normalizing Gradients](#Normalizing Gradients)
+* [2 Analysis](#Analysis)
+  * [2.1 Scale Invariance in Stabilizing Training](#Scale-Invariance-in-Stabilizing-Training)
+  * [2.2 Improved Conditioning in Optimization](#Improved-Conditioning-in-Optimization)
+  * [2.3 Stochasticity for Generalization](#Stochasticity-for-Generalization)
+* [3. Application](#Application)
+  * [3.1 Domain Adaptation](#Domain-Adaptation)
+  * [3.2 Style Transfer](#Style-Transfer)
+  * [3.3 Training GANs](#Training-GANs)
+  * [3.4 Efficient Deep Models](#Efficient-Deep-Models)
+  * [3.5 Meta learning](#Meta-learning)
+  * [3.6 Reinforcement learning](#Reinforcement-learning)
+  * [3.7 Unsupervised/Semi-supervised representation learning](#Unsupervised/Semi-supervised-representation-learning)
+  * [3.8 Applied in miscellaneous networks](#Applied-in-miscellaneous-networks)
+* [Contact](#Contact)
 
-* 
+### 
 
 -----
 
@@ -55,14 +72,14 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 
   
 
-### 1.2 Normalizing Activations as Functions
+### Normalizing Activations as Functions
 
 - Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift.  ICML, 2015.  [paper](https://arxiv.org/abs/1502.03167) ,  [code]().
 - Knowledge matters: Importance of prior information for optimization. JMLR, 2016.  [paper](https://arxiv.org/abs/1301.4083) .
 - Recurrent Batch Normalization. ICLR, 2017.  [paper](https://arxiv.org/abs/1603.09025) ,  [code](https://github.com/cooijmanstim/recurrent-batch-normalization).
 - Batch normalized recurrent neural networks. ICASSP, 2016.  [paper](https://arxiv.org/abs/1510.01378).
 
-#### 1.2.1 Normalization Area Partitioning
+#### Normalization Area Partitioning
 
 - Layer Normalization. arXiv:1607.06450, 2016.  [paper](https://arxiv.org/abs/1607.06450) .
 - Group Normalization. ECCV, 2018.  [paper](https://arxiv.org/abs/1803.08494) ,  [code](https://github.com/ppwwyyxx/GroupNorm-reproduce).
@@ -74,7 +91,7 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 - ImageNet Classification with Deep Convolutional Neural Networks. NeurIPS, 2012.  [paper](https://papers.nips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf) .
 - Normalizing the Normalizers: Comparing and Extending Network Normalization Schemes. ICLR, 2017.  [paper](https://arxiv.org/abs/1611.04520) ,  [code](https://github.com/renmengye/div-norm).
 
-#### 1.2.2 Normalization Operation
+#### Normalization Operation
 
 - Decorrelated Batch Normalization. CVPR, 2018.  [paper](https://arxiv.org/abs/1804.08450) ,  [code](https://github.com/princeton-vl/DecorrelatedBN).
 - Iterative Normalization: Beyond Standardization towards Efficient Whitening. CVPR, 2019.  [paper](https://arxiv.org/abs/1904.03441) ,  [code](https://github.com/huangleiBuaa/IterNorm).
@@ -96,7 +113,7 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 - Online Normalization for Training Neural Networks. NeurIPS, 2019.  [paper](https://arxiv.org/abs/1905.05894) ,  [code](https://github.com/Cerebras/online-normalization).
 - Correct Normalization Matters: Understanding the Effect of Normalization On Deep Neural Network Models For Click-Through Rate Prediction. arXiv:2006.12753, 2020.  [paper](https://arxiv.org/abs/2006.12753).
 
-#### 1.2.3 Normalization Representation Recovery
+#### Normalization Representation Recovery
 
 - Whitening and Coloring transform for GANs. ICLR, 2019.  [paper](https://arxiv.org/abs/1806.00420) ,  [code](https://github.com/AliaksandrSiarohin/wc-gan).
 
@@ -122,12 +139,12 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 
   
 
-#### 1.2.4 Multi-Mode
+#### Multi-Mode
 
 - Training Faster by Separating Modes of Variation in Batch-normalized Models. TPAMI, 2019.  [paper](https://arxiv.org/abs/1806.02892) ,  [code]().
 - Mode Normalization. ICLR, 2019.  [paper](https://arxiv.org/abs/1810.05466) ,  [code](https://github.com/ldeecke/mn-torch).
 
-#### 1.2.5 Combinational Normalization
+#### Combinational Normalization
 
 - Differentiable learning-to-normalize via switchable normalization.  ICLR, 2019.   [paper](https://arxiv.org/abs/1806.10779) ,  [code](https://github.com/switchablenorms/Switchable-Normalization).
 - SSN: Learning Sparse Switchable Normalization via SparsestMax. CVPR, 2019.  [paper](https://arxiv.org/abs/1903.03793) ,  [code](https://github.com/switchablenorms/Sparse_SwitchNorm).
@@ -140,11 +157,11 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 - Rethinking Normalization and Elimination Singularity in Neural Networks. arXiv:1911.09738, 2019.  [paper](https://arxiv.org/abs/1911.09738) ,  [code](https://github.com/joe-siyuan-qiao/Batch-Channel-Normalization).
 - Evolving Normalization-Activation Layers. arXiv:2004.02967, 2020.  [paper](https://arxiv.org/abs/2004.02967) ,  [code](https://github.com/lonePatient/EvoNorms_PyTorch).
 
-#### 1.2.6 BN for More Robust Estimation
+#### BN for More Robust Estimation
 
 - Kalman Normalization: Normalizing Internal Representations Across Network Layers. NeurIPS, 2018.  [paper](https://papers.nips.cc/paper/2018/file/e369853df766fa44e1ed0ff613f563bd-Paper.pdf) ,  [code](https://github.com/wanggrun/Kalman-Normalization).
 
-##### 1.2.6.1 Normalization as Functions Combining Population Statistics
+##### Normalization as Functions Combining Population Statistics
 
 - Batch Renormalization: Towards Reducing Minibatch Dependence in Batch-Normalized Models. NeurIPS, 2017.  [paper](https://arxiv.org/abs/1702.03275) .
 - Density estimation using Real NVP. ICLR, 2017.  [paper](https://arxiv.org/abs/1605.08803) ,  [code](https://github.com/chrischute/real-nvp).
@@ -157,13 +174,13 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 - Double forward propagation for memorized batch normalization. AAAI, 2018.  [paper](https://arxiv.org/pdf/2010.04947.pdf) .
 - Cross-iteration batch normalization. arXiv:2002.05712, 2020.  [paper](https://arxiv.org/abs/2002.05712) ,  [code](https://github.com/Howal/Cross-iterationBatchNorm).
 
-##### 1.2.6.2 Robust Inference Methods for BN
+##### Robust Inference Methods for BN
 
 - EvalNorm: Estimating Batch Normalization Statistics for Evaluation. ICCV, 2019.  [paper](https://arxiv.org/abs/1904.06031) .
 - Four Things Everyone Should Know to Improve Batch Normalization. ICLR, 2020.  [paper](https://arxiv.org/abs/1906.03548) ,  [code](https://github.com/ceciliaresearch/four_things_batch_norm).
 - An Investigation into the Stochasticity of Batch Whitening. CVPR, 2020.  [paper](https://arxiv.org/abs/2003.12327) ,  [code](https://github.com/huangleiBuaa/StochasticityBW).
 
-### 1.3 Normalizing Weights
+### Normalizing Weights
 
 - Weight Normalization: A Simple Reparameterization to Accelerate Training of Deep Neural Networks. NeurIPS, 2016.  [paper](https://arxiv.org/abs/1602.07868) ,  [code](https://github.com/openai/weightnorm).
 
@@ -215,7 +232,7 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 
 - Efficient Riemannian optimization on the Stiefel manifold via the Cayley transform. ICLR, 2020.  [paper](https://arxiv.org/abs/2002.01113) ,  [code](https://github.com/JunLi-Galios/Optimization-on-Stiefel-Manifold-via-Cayley-Transform).
 
-### 1.4 Normalizing Gradients
+### Normalizing Gradients
 
 - Block-normalized gradient method: An empirical study for training deep neural network. arXiv:1707.04822, 2017.  [paper](https://arxiv.org/abs/1707.04822).
 - Large batch training of convolutional networks. arXiv:1708.03888, 2017.  [paper](https://arxiv.org/abs/1708.03888) ,  [code](https://github.com/noahgolmant/pytorch-lars).
@@ -224,9 +241,9 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 - Large Batch Training Does Not Need Warmup. arXiv:2002.01576, 2020.  [paper](https://arxiv.org/abs/2002.01576) .
 - Gradient Centralization: A New Optimization Technique for Deep Neural Networks. ECCV, 2020.  [paper](https://arxiv.org/abs/2004.01461) ,  [code](https://github.com/Yonghongwei/Gradient-Centralization).
 
-## 2 Analysis 
+## Analysis 
 
-### 2.1 Scale Invariance in Stabilizing Training
+### Scale Invariance in Stabilizing Training
 
 - Layer Normalization. arXiv:1607.06450, 2016.  [paper](https://arxiv.org/abs/1607.06450).
 
@@ -262,7 +279,7 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 
   
 
-### 2.2 Improved Conditioning in Optimization
+### Improved Conditioning in Optimization
 
 - Second Order Properties of Error Surfaces. NeurIPS, 1990.  [paper](http://papers.neurips.cc/paper/314-second-order-properties-of-error-surfaces-learning-time-and-generalization.pdf) .
 - Decorrelated Batch Normalization. CVPR, 2018.  [paper](https://arxiv.org/abs/1804.08450) ,  [code](https://github.com/princeton-vl/DecorrelatedBN).
@@ -279,7 +296,7 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 - Exponential convergence rates for Batch Normalization: The power of length-direction decoupling in non-convex optimization. AISTATS, 2019.  [paper](http://proceedings.mlr.press/v89/kohler19a.html) .
 - Optimization Theory for ReLU Neural Networks Trained with Normalization Layers. ICML, 2020.  [paper](https://arxiv.org/abs/2006.06878).
 
-### 2.3 Stochasticity for Generalization
+### Stochasticity for Generalization
 
 
 
@@ -291,9 +308,9 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 - Instance Enhancement Batch Normalization: an Adaptive Regulator of Batch Noise. AAAI, 2020.  [paper](https://arxiv.org/abs/1908.04008) ,  [code](https://github.com/gbup-group/IEBN).
 - Evaluating Prediction-Time Batch Normalization for Robustness under Covariate Shift. arXiv:2006.10963, 2020. [paper](https://arxiv.org/abs/2006.10963) .
 
-## 3. Application
+## Application
 
-### 3.1 Domain Adaptation
+### Domain Adaptation
 
 - Revisiting Batch Normalization For Practical Domain Adaptation. arXiv:1603.04779, 2016.  [paper](https://arxiv.org/abs/1603.04779) .
 - AutoDIAL: Automatic DomaIn Alignment Layers. ICCV, 2017.  [paper](https://arxiv.org/abs/1704.08082) ,  [code](https://github.com/ducksoup/autodial/blob/master/README.md).
@@ -310,7 +327,7 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 - Interpolating Convolutional Neural Networks Using Batch Normalization. ECCV, 2018.  [paper](https://openaccess.thecvf.com/content_ECCV_2018/papers/Gratianus_Wesley_Putra_Data_Interpolating_Convolutional_Neural_ECCV_2018_paper.pdf) .
 - Efficient Multi-Domain Learning by Covariance Normalization. CVPR, 2019.  [paper](https://openaccess.thecvf.com/content_CVPR_2019/papers/Li_Efficient_Multi-Domain_Learning_by_Covariance_Normalization_CVPR_2019_paper.pdf) ,  [code](https://github.com/liyunsheng13/Efficient-Multi-Domain-Network-Learning-by-Covariance-Normalization).
 
-### 3.2 Style Transfer
+### Style Transfer
 
 - Instance Normalization: The Missing Ingredient for Fast Stylization. arXiv:1607.08022, 2016.  [paper](https://arxiv.org/abs/1607.08022) ,  [code](https://github.com/DmitryUlyanov/texture_nets).
 - A Learned Representation For Artistic Style. ICLR, 2017.  [paper](https://arxiv.org/abs/1610.07629) ,  [code](https://github.com/joelmoniz/gogh-figure).
@@ -329,7 +346,7 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 - Region Normalization for Image Inpainting. AAAI, 2020.  [paper](https://arxiv.org/abs/1911.10375) ,  [code](https://github.com/geekyutao/RN).
 - Attentive Normalization for Conditional Image Generation. CVPR, 2020.  [paper](https://arxiv.org/abs/2004.03828) ,  [code](https://github.com/Jia-Research-Lab/AttenNorm).
 
-### 3.3 Training GANs
+### Training GANs
 
 - Spectral normalization for generative adversarial networks. ICLR, 2018.  [paper](https://arxiv.org/abs/1802.05957) ,  [code](https://github.com/christiancosgrove/pytorch-spectral-normalization-gan).
 
@@ -347,7 +364,7 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 
   
 
-### 3.4 Efficient Deep Models
+### Efficient Deep Models
 
 - Learning Efficient Convolutional Networks through Network Slimming. ICCV, 2017.  [paper](https://arxiv.org/abs/1708.06519) ,  [code](https://github.com/liuzhuang13/slimming).
 - Rethinking the Smaller-Norm-Less-Informative Assumption in Channel Pruning of Convolution Layers. ICLR, 2018.  [paper](https://arxiv.org/abs/1802.00124) ,  [code](https://github.com/jack-willturner/batchnorm-pruning).
@@ -361,25 +378,25 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 - Normalization Helps Training of Quantized LSTM. NeurIPS, 2019.  [paper](https://proceedings.neurips.cc/paper/2019/hash/f8eb278a8bce873ef365b45e939da38a-Abstract.html) ,  [code](https://github.com/houlu369/Normalized-Quantized-LSTM).
 - How Does Batch Normalization Help Binary Training. arXiv:1909.09139, 2019.  [paper](https://arxiv.org/abs/1909.09139) .
 
-### 3.5 Meta learning
+### Meta learning
 
 - On first-order meta-learning algorithms. arXiv:1803.02999, 2018.  [paper](https://arxiv.org/abs/1803.02999) ,  [code](https://github.com/openai/supervised-reptile).
 - Meta-Learning Probabilistic Inference for Prediction. ICLR, 2019.  [paper](https://arxiv.org/abs/1805.09921) ,  [code](https://github.com/Gordonjo/versa).
 - TaskNorm: Rethinking Batch Normalization for Meta-Learning. ICML, 2020.  [paper](https://arxiv.org/abs/2003.03284) ,  [code](https://github.com/cambridge-mlg/cnaps).
 
-### 3.6 Reinforcement learning
+### Reinforcement learning
 
 - Learning values across many orders of magnitude. NeurIPS, 2016.  [paper](https://arxiv.org/abs/1602.07714) ,  [code](https://github.com/brendanator/atari-rl/blob/master/README.md).
 - Crossnorm: Normalization for off-policy td reinforcement learning. arXiv:1902.05605, 2019.  [paper](https://arxiv.org/abs/1902.05605).
 - Striving for Simplicity and Performance in Off-Policy DRL: Output Normalization and Non-Uniform Sampling. ICML, 2020.  [paper](https://arxiv.org/abs/1910.02208) ,  [code](https://github.com/Fable67/Streamlined-Off-Policy-Learning).
 
-### 3.7 Unsupervised/Semi-supervised representation learning
+### Unsupervised/Semi-supervised representation learning
 
 - Momentum Contrast for Unsupervised Visual Representation Learning. CVPR, 2020.  [paper](https://arxiv.org/abs/1911.05722) ,  [code](https://github.com/facebookresearch/moco).
 - Unsupervised Batch Normalization. CVPR Workshops, 2020.  [paper](https://openaccess.thecvf.com/content_CVPRW_2020/papers/w54/Kocyigit_Unsupervised_Batch_Normalization_CVPRW_2020_paper.pdf).
 - Exploring Simple Siamese Representation Learning. arXiv:2011.10566, 2020.  [paper](https://arxiv.org/pdf/2011.10566.pdf).
 
-### 3.8 Applied in miscellaneous networks.
+### Applied in miscellaneous networks.
 
 - Learning to find good correspondences. CVPR, 2018.  [paper](https://arxiv.org/abs/1711.05971) ,  [code](https://github.com/vcg-uvic/learned-correspondence-release).
 - Attentive context normalization for robust permutation-equivariant learning. CVPR, 2020.  [paper](https://arxiv.org/abs/1907.02545) ,  [code](https://github.com/vcg-uvic/acne).
