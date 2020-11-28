@@ -22,7 +22,17 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 
 [TOC]
 
+* [1. Methodology](#1. Methodology)
+  * [1.1 Normalizing Activations by Population Statistics](#1.1 Normalizing Activations by Population Statistics)
+  * [1.2 Normalizing Activations as Functions](#1.2 Normalizing Activations as Functions)
+    * [1.2.1 Normalization Area Partitioning](#1.2.1 Normalization Area Partitioning)
+    * [1.2.2 Normalization Operation](#1.2.2 Normalization Operation)
+  * [Computer vision venues](#Computer-vision-venues)
+  * [Machine learning venues](#Machine-learning-venues)
 
+* [DG variants](#DG-variants)
+
+* 
 
 -----
 
