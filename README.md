@@ -125,7 +125,7 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 
 - Instance-Level Meta Normalization. CVPR, 2019.  [paper](https://arxiv.org/abs/1904.03516) ,  [code](https://github.com/Gasoonjia/ILM-Norm).
 
-- Semantic Image Synthesis with Spatially-Adaptive Normalization. CVPR, 2018.  [paper](https://arxiv.org/abs/1903.07291) ,  [code](https://nvlabs.github.io/SPADE/).
+- Semantic Image Synthesis with Spatially-Adaptive Normalization. CVPR, 2019.  [paper](https://arxiv.org/abs/1903.07291) ,  [code](https://nvlabs.github.io/SPADE/).
 
 - Instance Enhancement Batch Normalization: an Adaptive Regulator of Batch Noise. AAAI, 2020.  [paper](https://arxiv.org/abs/1908.04008) ,  [code](https://github.com/gbup-group/IEBN).
 
