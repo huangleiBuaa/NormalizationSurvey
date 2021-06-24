@@ -16,10 +16,6 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 
 
 
-<br/>
-
-<br/>
-
 =========================***Update:*** ===============================
 
    2021-06-18.  V2:  Update for the [Tutorial of Normalization](https://normalization-dnn.github.io/)  
