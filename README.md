@@ -486,6 +486,7 @@ We hope this repo  provide a more friendly  way for readers to review/follow the
 
 ### Graph Neural Networks
 
+- PairNorm: Tackling Oversmoothing in GNNs. ICLR, 2020. [paper](https://openreview.net/pdf?id=rkecl1rtwB), [code](https://github.com/LingxiaoShawn/PairNorm)
 - Towards Deeper Graph Neural Networks with Differentiable Group Normalization. NeurIPS, 2020. [paper](https://papers.nips.cc/paper/2020/file/33dd6dba1d56e826aac1cbf23cdcca87-Paper.pdf)
 - GraphNorm: A Principled Approach to Accelerating Graph Neural Network Training. ICML, 2021. [paper](https://arxiv.org/abs/2009.03294), [code](https://github.com/lsj2408/GraphNorm)
 - Learning Graph Normalization for Graph Neural Networks. arXiv:2009.11746, 2020. [paper](https://arxiv.org/abs/2009.11746), [code](https://github.com/cyh1112/GraphNormalization)
